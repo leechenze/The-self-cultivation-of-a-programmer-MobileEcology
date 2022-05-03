@@ -1,0 +1,74 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "charcode",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/charcode-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "collection",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/collection-1.16.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/http-0.12.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/http_parser-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "path",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/path-1.8.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/pedantic-1.11.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "source_span",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/source_span-1.9.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "string_scanner",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/string_scanner-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "term_glyph",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/term_glyph-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "typed_data",
+      "rootUri": "file:///Users/lee/.pub-cache/hosted/pub.flutter-io.cn/typed_data-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "dart",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    }
+  ],
+  "generated": "2022-05-03T04:24:58.471099Z",
+  "generator": "pub",
+  "generatorVersion": "2.16.2"
+}
