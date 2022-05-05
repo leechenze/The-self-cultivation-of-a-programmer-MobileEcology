@@ -2,6 +2,15 @@
 零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾;
 
 
+
+
+
+
+
+
+
+
+
 零.概述
 
   语法基础, 数据类型, 运算符, 函数, 类与对象, 库与生态
@@ -34,6 +43,20 @@
       https://dartpad.cn/
     生态
       https://pub.dev/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,6 +112,17 @@
       成功 - 
       const: 用来声明编译时可以取到的值;
       final: 用来声明运行时可以取到的值;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -207,6 +241,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 叁.运算符
 
   地板除(~/)
@@ -221,6 +266,9 @@
     返回对象的引用, 这将意味着使用级联运算符可以对对象方法进行链式调用;
       myObject.myMethod()       返回myMethod的返回值;
       myObject..myMethod()      返回myObject对象的引用;
+
+
+
 
 
 
@@ -290,7 +338,7 @@
 
 
 
-伍.类
+伍.类与对象
 
   类, 继承, 抽象类, 接口, 混入, 泛型, 枚举;
 
@@ -406,6 +454,166 @@
       如果把抽象类当做接口实现的话, 普通类必须得实现抽象类里面定义的所有属性和方法, 就不只是抽象方法了;
       
     
-  接口:
+  接口: 
+    接口在Dart 中就是一个类(只是用法不同);
+      在Java 中声明接口需要interface 关键字, Dart不需要;
+      接口可以是任意类, 但一般使用抽象类作接口
+    一个类可以实现多个接口, 多个接口用逗号分隔;
+      class MyClass implements interface1, interface2 {...}
+    普通类实现接口后, 必须重写接口中所有的属性和方法;
+
     
+  混入:
+    Mixin是一段公共代码, 混入有两种声明方式:
+      将类当作混入:
+        class MixinA {...}
+        一旦class关键字被用作混入 (之后被子类with后);
+        就会阉割掉类中的所有特性和功能, 比如(继承, 构造函数)等...
+        所以在一般声明混入 就用mixin关键字, 尽量避免用class声明混入;
+      使用mixin关键字声明:
+          mixin MixinA {...}
+    混入注意事项:
+      作为Mixin的类只能继承自Object, 不能继承其他类;
+        因为Object是Dart中所有类的一个父类(String, bool, List)等等等...
+      作为Mixin不能有构造函数;
+      一旦类继承了之后, 就不能用作混入了;
+    混入作用:
+      Dart中继承是单继承, 一个子类只能继承一个父类;
+      这样就导致没有一个公共类的概念, 而mixin就是相当于Dart的多继承解决方案;
+      混入可以提高代码的复用效率, 普通类可以通过with 来使用混入;
+      class MyClass with MixinA, MixinB
+    使用多个混入时, 后引入的混入会覆盖之前混入中的重复内容;
+      
+
+  泛型:
+    简介:
+      泛型声明:
+        构造函数:
+          new Set<int>()
+          new List<int>()
+          new CustomClass<int>()
+        字面量:
+          <int>{}
+          <int>[]
+          
+      泛型是在函数, 类, 接口中指定宽泛数据类型的语法;
+        泛型接口
+        泛型函数
+        泛型类
+      通常在尖括号中, 使用一个字母来代替类型; 例如: E, T, S, K和V等;
+        
+      作用:
+        使用泛型可以减少重复的代码;
+
+    泛型函数: (10Dart泛型/index01.dart)
+    泛型类: (10Dart泛型/index02.dart)
+    泛型接口: (10Dart泛型/index03.dart)
+    泛型限制参数类型: (10Dart泛型/index04.dart)
+      限制参数类型在Flutter源码中有很多应用;
+
+  枚举:
+    严格来说不属于面向对象中的内容, 它是一个单独的知识点;
+    枚举是数量固定的常量值, 通过enum关键字声明;
+      和类的写法比较像; 把enum 换成 class 就有点像了哈哈哈😂;
+      enum Color {red, green, blue};
+    enum用来代替一些常量的声明, const和final声明的常量是分散的, 没有什么实际意义;
+      枚举的语义华程度比常量好一点;
+    枚举的values属性, 可以获取所有枚举值的列表;
+      List<Color> colors = Color.values;
+    枚举可以通过index获取值的索引;
+      print(Color.red.index);
+    
+
+
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+陆.库与生态
+
+  简介, 自定义库,  系统库, 第三方
+
+  简介:
+    Dart中的库就是具有特定功能的模块;
+      可能具有包含单个文件, 也可能包含多个文件;
+    按照库的作者进行划分, 库可以分为三类:
+      自定义库:
+        工程师自己写的库;
+      系统库:
+        Dart环境自带的;
+      第三方库:
+        Dart生态中库;
+        Dart生态:
+          Dart生态圈资源: Pub
+            https://pub.dev/
+          如果要管理生态的话Dart又一系列命令前文提到过, 在Dart的安装目录中;
+            /Users/***/Library/Flutter/bin/cache/dart-sdk/bin/
+              dart2js.bat                                           Dart代码转换Js代码
+              dart2native.bat                                       Dart代码转换原生代码
+              dartdoc.bat                                           生成dart相关的文档
+              dartfmt.bat                                           格式化Dart代码
+              pub.bat                                               Dart生态的第三方包工具
+        生态比对:
+          Dart:
+            library                                                 库(JS包)
+            https://pub.dev/                                        生态官网
+            pubspec.yaml                                            依赖文件
+            pub                                                     管理命令                   
+          JavaScript:
+            package                                                 包(Dart库)
+            https://npmjs.com/                                      生态官网
+            package.json                                            依赖文件
+            npm                                                     管理命令
+          
+  自定义库: (12Dart库与生态/index01.dart)
+    通过 library 来声明库;
+      每个Dart文件默认都是一个库, 只是没有使用 library 来显示声明;
+        // 默认隐藏了一个 main 的 library 声明
+        library main;
+        main() {
+          print('Hello World');
+        }
+      Dart 使用_(下划线) 开头的标识符, 表示库内访问可见的(私有);
+        比如之前类的构造函数章节, 类中的属性私有声明,
+        是必须要将类单独抽离出去才可以实现属性私有, 这就是解释;
+      library 关键字声明的库名建议使用: 小写字母 + _(下划线)的方式命名, 驼峰命名会报错;
+    引入方式:
+      import '库的位置/库的名称.dart';
+    指定库的前缀: (12Dart库与生态/lib/custom02.dart)
+                (12Dart库与生态/lib/custom03.dart)
+      如果引入的很多自定义库中有重名的变量或常量时, 就需要指定库的前缀;
+        当库名冲突时, 可以通过 as 关键字, 给库名声明一个前缀;
+    延迟加载库:
+      延迟引入, 可以理解为懒加载;
+      使用 deferred as 关键字来标识需要延时加载的库;
+      
+    通过 part 和 part of 来组装库:
+      暂缺;
+
+  系统库: (12Dart库与生态/index02.dart)
+    引入方式:
+      import "dart:库名称";
+    特例:
+      import 'dart:core';
+      这个库是默认引入的, 在每一个Dart文件中, 只要有Dart环境, 就会有这个库中的所有方法;
+    引入部分库:
+      可以理解为按需加载,按需引入;
+      show: (12Dart库与生态/lib/system01.dart)
+        包含引入, 可以在show关键字后面把想要的内容写出来, 多个内容之间用逗号分隔;
+      hide: (12Dart库与生态/lib/system02.dart)
+        排除引入, 将一个库中不需要的写到hide关键字之后, 就不会引入这个库中的相关模块;
+  第三方库:
     
