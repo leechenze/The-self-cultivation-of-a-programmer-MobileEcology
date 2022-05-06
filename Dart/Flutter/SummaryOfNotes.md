@@ -23,7 +23,7 @@
         https://flutter.cn/
 
     
-贰.环境搭建:
+贰.环境搭建:  (上级目录参照 hello_flutter);
   Java JDK
   Flutter SDK
     在官网找安装包: https://flutter.cn/docs/get-started/install/macos (注意对应自己的系统, 然后添加环境变量);

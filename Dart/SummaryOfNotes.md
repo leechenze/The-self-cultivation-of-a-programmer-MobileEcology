@@ -596,14 +596,56 @@
                 (12Dart库与生态/lib/custom03.dart)
       如果引入的很多自定义库中有重名的变量或常量时, 就需要指定库的前缀;
         当库名冲突时, 可以通过 as 关键字, 给库名声明一个前缀;
-    延迟加载库:
+    延迟加载库: (12Dart库与生态/lib/custom04.dart)
       延迟引入, 可以理解为懒加载;
       使用 deferred as 关键字来标识需要延时加载的库;
-      
-    通过 part 和 part of 来组装库:
-      暂缺;
+      见custom04.dart需要 async 和 await 配合等待 loadLibrary()的方法执行之后才可以使用引入的库;
+      使用了 deferred 关键字的引入库, 必须要等待 loadLibrary 的执行之后, 才可以使用;
+    通过 part 和 part of 来组装库:  (12Dart库与生态/lib/custom05.dart)  主库
+                                  (12Dart库与生态/lib/custom06.dart)  分库
+                                  (12Dart库与生态/lib/custom07.dart)  分库
+      使用示例:
+        @分库:
+          sub1.dart
+            // 声明是 util 库的一部分;
+            part of util;
+            int foo () {
+              ...
+            }
+          sub2.dart
+            // 声明是 util 库的一部分;
+            part of util;
+            int bar () {
+              ...
+            }
+        @主库:
+          util.dart
+            // 声明主库名为 util;
+            library phone;
+            // 声明与 sub1 和 sub2 的连接;
+            part "sub1.dart";
+            part "sub2.dart";
+            String hello () {
+              ...
+            }
+        @使用:
+          import "util.dart";
+          // 在引入 util 主库后, 可以使用 分库中的方法;
+          void main() {
+            foo();
+            bar();
+            hello();
+          }
+      注意事项:
+        如果主库中存在 main 这个主函数, 其他分库则不允许再次出现 main 函数;
+        分库中的 part of 要和 主库的 library 声明的库名相对应;
+        
 
   系统库: (12Dart库与生态/index02.dart)
+    文档查阅:
+      https://dart.cn/guides/libraries
+    系统库也叫做核心库, 是Dart提供的常用内置库;
+      不需要单独下载, 可以直接引入使用;
     引入方式:
       import "dart:库名称";
     特例:
@@ -615,5 +657,40 @@
         包含引入, 可以在show关键字后面把想要的内容写出来, 多个内容之间用逗号分隔;
       hide: (12Dart库与生态/lib/system02.dart)
         排除引入, 将一个库中不需要的写到hide关键字之后, 就不会引入这个库中的相关模块;
-  第三方库:
-    
+  第三方库: (12Dart库与生态/index03.dart)
+    来源:
+      https://pub.dev/
+      https://pub.flutter-io.cn/packages
+      https://pub.dartlang.org/flutter
+    使用:
+      在项目目录下创建pubspec.yaml
+      在pubspec.yaml中声明第三方库(依赖);
+      命令行中进入 pubspec.yaml所在目录, 执行 pub get 进行安装;
+      项目中引入已安装的第三方库 (import 'package:xxx/xxx.dart';)
+    目录简介:
+      .packspec.yaml
+        官网介绍: https://dart.cn/tools/pub/pubspec
+        name:         必填项目名称(包名称)
+        description:  描述
+        publish_to:   指定包发布位置
+        version:      版本号:
+        environment:  配置Dart环境 (配置上这里后,dart命令就可以在当前项目环境或是编译器中运行了,类似于package.json中的 scripts 配置);
+      .packages
+        类似 JS包中的 node_modules 这个文件中记录了项目以来的文件的本地存放地址在哪
+      .dart_tool/.package_config.json
+        运行一些命令时, 如果用到了相关的内容, 会在这个目录中寻找;
+      
+      正常的一个第三方库的目录结构:
+        dart                                  项目
+          example                             示例目录
+            main.dart
+          lib                                 核心代码包
+            dart_string_mainp.dart
+            functions_dart                    
+          .gitignore                          Git忽略文件
+          .packages                           库的映射
+          LICENSE                             
+          README.md                           自述文件
+          pubspec.ymal                        包依赖文件
+          pubspec.lock                        包锁定文件(记录安装过的名称及版本信息)
+        

@@ -1,3 +1,27 @@
+/* 所有系统库 */
+import 'dart:async';
+import 'dart:collection';
+import 'dart:convert';
+import 'dart:core';
+import 'dart:developer';
+import 'dart:math';
+import 'dart:typed_data';
+/* VM */
+import 'dart:cli';
+import 'dart:ffi';
+import 'dart:io';
+import 'dart:isolate';
+import 'dart:mirrors';
+/* WEB */
+import 'dart:html';
+import 'dart:indexed_db';
+import 'dart:js';
+import 'dart:js_util';
+import 'dart:svg';
+import 'dart:web_audio';
+import 'dart:web_gl';
+
+/* 自定义库 */
 // show 后面是指定引入的内容;
 import 'lib/system01.dart' show system01_1, system01_3;
 // hide 后面是隐藏引入的内容;
