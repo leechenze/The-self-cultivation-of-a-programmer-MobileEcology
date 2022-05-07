@@ -22,6 +22,27 @@
         https://flutterchina.club/
         https://flutter.cn/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 贰.环境搭建:  (上级目录参照 hello_flutter);
   Java JDK
@@ -107,3 +128,143 @@
                   maven {url 'https://maven.aliyun.com/repository/public'}
               }
           }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+叁.HelloFlutter
+  
+  基础组件,  第三方组件, 状态管理,  路由与导航, 表单,  其他
+
+  基础组件:  
+
+    常用, 布局, 按钮, 图片, 列表, 其他
+    
+    Flutter当中不是基于JS生态, 没有单独的CSS样式描述;
+    所有的样式修饰都是通过组件的形式完成的;
+  
+    1.hello_flutter (lib01/main.dart)
+
+      基础目录:
+        flutter_app
+          android                           安卓目录
+          build                             构建目录
+          ios                               IOS目录
+          lib                               开发目录
+            main.dart                         入口文件
+          test                              测试目录
+          .gitignore                        
+          pubspec.lock                      项目依赖锁定信息
+          pubspec.yaml                      项目依赖配置信息
+      
+      Material Design UI  (Google推出的前端UI解决方案);
+        官网: https://www.material.io/
+        中文网: https://material-io.cn/
+      Flutter 中的一切内容都是组件(Widget);
+        无状态组件: (StatelessWidget)
+        有状态组件: (StatefulWidget)
+        比如以下例子中用到的 Container, Center, Text都是组件;
+      
+        void main() {
+          runApp(MyApp());
+        }
+        
+        class MyApp extends StatelessWidget {
+          @override
+          // build 是一个Widget的实例, 是一个热更新的方法;
+          Widget build(BuildContext context) {
+            return new Container(
+                child: new Center(
+              child: new Text(
+                "Hello Flutter",
+                textDirection: TextDirection.ltr,
+              ),
+            ));
+          }
+        }
+
+    
+    2.App结构:  (lib02/main.dart)
+      现阶段要搭建App基本骨架, 需要考虑使用两个组件:
+      MaterialApp (Material Design UI提供, 包含App的基本骨架)
+        title (任务管理器中的标题);    
+        home  (主内容, 一般来说是包含 Scaffold的自定义组件);
+        debugShowCheckedModeBanner  (是否显示左上角调试信息);
+        
+      Scaffold  (脚手架)
+        appBar  (应用头部)
+        body  (应用主体)
+        floatingActionButton  (浮动按钮)
+        drawer  (左侧抽屉菜单)
+        endDrawer (右侧抽屉菜单)
+
+      具体App结构请看图
+      ```html
+        <img src="../Images/WechatIMG96.png">
+      ```
+      
+      
+      
+    3.文本组件  (lib03/main.dart)
+      RichText 和 TextSpan  (这两个组件一般组合使用, 作用于给一段文本声明不同的多个样式)
+      Text
+        TextDirection                       (文本方向)
+        TextStyle                           (文本样式)
+          Colors                              (文本颜色)
+          FontWeight                          (字体粗细)
+          FontStyle                           (字体样式)
+        TextAlign                           (文本对齐)
+        TextOverflow                        (文本溢出)
+        maxLines                            (指定显示的行数)
+      
+        
+    4.自定义字体  (lib04/main.dart) (pubspec.yaml) (fonts/*.ttf)
+      下载并导入字体库
+        https://fonts.google.com
+        解压压缩包, 将字体文件复制到项目中
+      在 pubspec.yaml中声明字体
+        <img src="/Images/WechatIMG97.png">
+      使用
+        为整个应用设置默认自定义字体  (全局应用)
+          MaterialApp(
+            theme: ThemeData(
+              fontFamily: 'OleoScript',
+            ),
+          );
+        为某个组件设置自定义字体  (局部应用)
+          Text(
+            text: 'Hello Xi`an',
+            style: TextStyle(
+              fontFamily: 'OleoScript',
+            ),
+          ),
+        
+        
+        
+        
+    5.
+    6.
+
+      

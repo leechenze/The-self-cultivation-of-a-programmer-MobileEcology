@@ -668,7 +668,7 @@
       命令行中进入 pubspec.yaml所在目录, 执行 pub get 进行安装;
       项目中引入已安装的第三方库 (import 'package:xxx/xxx.dart';)
     目录简介:
-      .packspec.yaml
+      .pubspec.yaml
         官网介绍: https://dart.cn/tools/pub/pubspec
         name:         必填项目名称(包名称)
         description:  描述

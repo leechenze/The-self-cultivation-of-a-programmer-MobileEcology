@@ -7,15 +7,12 @@ void main(List<String> args) {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: '',
-      home: const Home(),
-      // 全局应用自定义字体
-      theme: ThemeData(
-        fontFamily: 'OleoScript',
-      ),
+      home: Home(),
       debugShowCheckedModeBanner: false,
     );
   }
