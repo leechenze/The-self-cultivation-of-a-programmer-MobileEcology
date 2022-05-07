@@ -262,9 +262,61 @@
           ),
         
         
+    5.Icon
+      Icon是flutter当中的图标库, 实质上是由 Material Design提供的
+        Icon(
+          Icons.具体名称,
+        )
+        icon不需要额外配置,因为它是基于 Material 的, 集成在项目中的一个不可少的库
+      图标在线预览:
+        https://material.io/resources/icons
+      
+
+      
+    6.Color (lib06/main.dart)
+      自定义颜色
+        Flutter中通过 ARGB 声明颜色
+        const Color(0xFF42A5F5)
+          (0x)          声明: 标记为16进制
+          (FF)          声明: 透明度
+          (42A5F5)      声明: 十六进制色码
+        const Color.fromARGB(0xFF, 0x42, 0xA5, 0xF5)  构造函数声明: 十六进制语法
+        const Color.fromARGB(255, 66, 165, 245)       构造函数声明: 十进制语法
+        const Color.fromRGBO(66, 165, 245, 1.0)       构造函数声明: 最后一位表示透明度
+      Colors
+        const Colors.red      注意是Colors复数形式
         
+      
+    7.Container (lib07/main.dart)
+      布局相当于Html中的 Div
+        child                             声明子组件
+        width                             设宽
+        height                            设高
+          double.infinity                   无限宽高, 表示自适应父元素宽度
+        margin                            外边距
+        padding                           内边距
+          EdgeInsets                        边缘填充
+            .all()                            设置四个方向的 padding 或 margin
+            .fromLTRB()                       分别对四个方向的 内外边距设值
+            .only()                           设置某一个方向的值
+        decration                         修饰盒模型
+          BoxDecration                      边框, 圆角, 渐变, 阴影, 背景色, 背景图
+        alignment                         对盒子 (Container) 中的内容进行对齐
+          Alignment                         内容对齐
+        transform                         变形
+          Matrix4                         平移(translate), 旋转(rotate), 缩放(scale), 斜切(skew)
         
-    5.
-    6.
+    
+    
+    
+    8.
+    9.
+    10.
+    11.
+    12
+    13.
+    14.
+    15.
+    16.
 
       
