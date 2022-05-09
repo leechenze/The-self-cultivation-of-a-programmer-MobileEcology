@@ -307,16 +307,80 @@
           Matrix4                         平移(translate), 旋转(rotate), 缩放(scale), 斜切(skew)
         
     
+    8.Column线性布局  (lib08/main.dart)
+      Column
+        Column的主轴方向是垂直方向;
+        mainAxisAlignment:  MainAxisAlignment   主轴对齐方式
+        crossAxisAlignment: CrossAxisAlignment  交叉轴对齐方式
+        children:                               内容
+      Row
+        Row的主轴方向是水平方向;
+        其他属性和Column一致;
+
+    9.Flex布局  (lib09/main.dart)
+      Flex
+        children                                  声明子组件
+        direction                                 声明主轴方向
+        mainAxisAlignment                         声明主轴对齐方式
+        textDirection                             声明水平方向排列顺序
+        crossAxisAlignment                        声明交叉轴对齐方式
+        verticalDirection                         声明垂直方向的排列顺序
+      Expanded  (可伸缩组件)                      默认获取父元素的宽度,无需设置 width: doubule.infinity
+        flex                                      声明弹性布局占比
+        child                                     声明子组件
+
+    10.流式布局 (lib10/main.dart)
+      Flex中的流式布局不是默认场景, 比如在Column或Row中声明的内容溢出了, 就会报错;
+      像Web开发的 html 如果溢出会按着流式顺序往下排列, 但是Flutter 则不行;
+      Flutter 提供了一个内容溢出报错的组件 Wrap
+      
+      Wrap  (解决内容溢出的问题)
+        spacing                               主轴方向子组件之间间距        alignment                             主轴方向对齐方式
+        runSpacing                            纵轴方向只组件之间间距
+        runAlignment                          纵轴方向对齐方式
+      
+      Chip (标签, 扁平化按钮)
+        CircleAvatar  (圆形头像)
     
     
-    8.
-    9.
-    10.
-    11.
-    12
+    11.层叠布局 (lib11/main.dart)
+      Stack (层叠组件)  类似于css中的 z-index
+        alignment                           声明未定义子组件的对齐方式
+        textDirection                       声明未定义子组件的排列顺序
+
+        Positioned  (定位组件);
+          child                               声明子组件
+          left                                类同 Css
+          top                                 类同 Css
+          right                               类同 Css  
+          bottom                              类同 Css
+          width
+          height
+    
+      NetWorkImage  (网络图片组件);
+        NetWorkImage('图片地址')              
+
+        安卓网络权限配置: 在开发的 Flutter 当中, 一定要有访问网络的权限, 才能加载网络图片
+          配置文件路径: (hello_flutter/android/app/src/main/AndroidManifest.xml)
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <application
+              android:usesCleartextTraffic="true" >
+
+    12.卡片&列表瓦片 (lib12/main.dart)
+      Card
+        child                       子组件
+        shadowColor                 阴影色
+        elevation                   阴影高度
+        shape                       边框样式
+        margin                      外边距
+
+      ListTitle
+        leading                     头部组件
+        title                       标题
+        subtitle                    子标题
+      
+    
     13.
     14.
     15.
     16.
-
-      

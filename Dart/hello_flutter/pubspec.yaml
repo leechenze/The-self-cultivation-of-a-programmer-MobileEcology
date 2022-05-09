@@ -57,6 +57,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/Images/
+    - assets/Images/user/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -91,7 +94,7 @@ flutter:
   fonts: 
     - family: OleoScript
       fonts:
-        - asset: fonts/OleoScript/OleoScript-Bold.ttf
-        - asset: fonts/OleoScript/OleoScript-Regular.ttf
+        - asset: Fonts/OleoScript/OleoScript-Bold.ttf
+        - asset: Fonts/OleoScript/OleoScript-Regular.ttf
           weight: 100
           style: italic
