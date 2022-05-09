@@ -24,11 +24,30 @@ class CardDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'CardDemo',
-        style: TextStyle(color: Colors.amber),
-      ),
+    return Column(
+      children: [
+        Card(
+          child: Column(
+            children: const [
+              ListTile(
+                leading: Icon(Icons.abc_outlined, size: 50),
+                title: Text(
+                  'LeeChenZe',
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
+                ),
+                subtitle: Text(
+                  '董事长',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              )
+            ],
+          ),
+        )
+      ],
     );
   }
 }
