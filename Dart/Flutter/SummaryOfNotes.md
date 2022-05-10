@@ -415,6 +415,36 @@
     
     
     
-    14.图片组件
-    15.
+    14.图片组件 (lib14/main.dart)
+      Image.asset(加载本地图片)
+        Flutter 项目下, 创建图片存储目录
+        在pubspec.yaml中的flutter部分添加图片配置
+      Image.network(加载网络图片)
+        保证网络畅通
+        设置网络访问权限
+          之前Card (lib12/main.dart) 组件中已经配置过, 步骤不再阐述;
+        
+
+
+    15.SingleChildScrollView  (lib15/main.dart)
+      SingleChildScrollView (类似Android中的 ScrollView)
+        child                           子组件
+        padding                         内边距
+        scrollDirection                 滚动方向
+          Axis.horizontal                 水平滚动
+          Axis.vertical                   垂直滚动
+        reverse                         初始化滚动位置
+          false                           头部
+          true                            尾部
+        physics                         设置滚动视图的物理特征
+          ClampingScrollPhysics           Android 下微光效果
+          BouncingScrollPhysics           IOS 下弹性效果
+        
+
+
+    
+    
+    
+    
+    
     16.
