@@ -27,6 +27,17 @@ class CardDemo extends StatelessWidget {
     return Column(
       children: [
         Card(
+          margin: const EdgeInsets.all(20),
+          color: Color.fromARGB(255, 255, 0, 234),
+          shadowColor: Color.fromARGB(255, 0, 64, 255),
+          elevation: 10,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+            side: BorderSide(
+              color: Color.fromARGB(255, 0, 212, 32),
+              width: 5,
+            ),
+          ),
           child: Column(
             children: const [
               ListTile(
@@ -39,6 +50,61 @@ class CardDemo extends StatelessWidget {
                 ),
                 subtitle: Text(
                   '董事长',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              Divider(),
+              ListTile(
+                subtitle: Text(
+                  '电话: 122222222',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              ListTile(
+                subtitle: Text(
+                  '电话: xxxxxxxxxxx',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            children: const [
+              ListTile(
+                leading: Icon(Icons.abc_outlined, size: 50),
+                title: Text(
+                  'ZhangSF',
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
+                ),
+                subtitle: Text(
+                  'CTO',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              Divider(),
+              ListTile(
+                subtitle: Text(
+                  '电话: 122222222',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              ListTile(
+                subtitle: Text(
+                  '电话: xxxxxxxxxxx',
                   style: TextStyle(
                     fontSize: 20,
                   ),

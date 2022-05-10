@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
       home: const Home(),
       // 全局应用自定义字体
       theme: ThemeData(
-        fontFamily: 'OleoScript',
-      ),
+          // fontFamily: 'OleoScript',
+          ),
       debugShowCheckedModeBanner: false,
     );
   }

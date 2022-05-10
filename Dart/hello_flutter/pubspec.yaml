@@ -91,10 +91,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-  fonts: 
-    - family: OleoScript
-      fonts:
-        - asset: Fonts/OleoScript/OleoScript-Bold.ttf
-        - asset: Fonts/OleoScript/OleoScript-Regular.ttf
-          weight: 100
-          style: italic
+  # fonts: 
+  #   - family: OleoScript
+  #     fonts:
+  #       - asset: Fonts/OleoScript/OleoScript-Bold.ttf
+  #       - asset: Fonts/OleoScript/OleoScript-Regular.ttf
+  #         weight: 100
+  #         style: italic
