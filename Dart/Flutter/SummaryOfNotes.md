@@ -380,7 +380,41 @@
         subtitle                    子标题
       
     
-    13.
-    14.
+    13.按钮 (lib13/main.dart)
+      常用按钮:
+        Flutter 1.22版本之前          未来版本将弃用
+          FlatButton                  扁平按钮
+          RaisedButton                凸起按钮
+          OutlineButton               轮廓按钮
+        Flutter 1.22版本之后
+          TextButton                  扁平按钮
+          ElevatedButton              凸起按钮
+          OutlinedButton              轮廓按钮
+        
+        Flutter 为什么要重写按钮?
+          以前的按钮统一外观比较麻烦, 经常自定义大量的按钮样式
+          新按钮将外观属性集合为一个ButtonStyle, 非常方便统一控制
+        
+      按钮主题:
+        TextButton       ==>      TextButtonTheme
+        ElevatedButton   ==>      ElevatedButtonTheme
+        OutlinedButton   ==>      OutlinedButtonTheme
+      
+      其他按钮:
+        图标按钮:
+          IconButton
+        ButtonBar:
+          如果空间足够, 就按着水平方向排列, 否则将垂直排列
+        FloatingActionButton:  
+          浮动按钮
+        BackButton:
+          回退按钮
+        CloseButton:
+          关闭按钮
+      
+    
+    
+    
+    14.图片组件
     15.
     16.
