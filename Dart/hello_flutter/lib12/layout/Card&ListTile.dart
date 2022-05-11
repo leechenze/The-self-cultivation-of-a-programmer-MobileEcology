@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Card&listTitle"),
+        title: const Text("Card&ListTile"),
         leading: const Icon(Icons.menu),
         actions: const [Icon(Icons.settings)],
         elevation: 0.0,

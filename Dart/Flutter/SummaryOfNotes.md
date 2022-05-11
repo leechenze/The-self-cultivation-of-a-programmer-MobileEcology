@@ -45,89 +45,93 @@
 
     
 贰.环境搭建:  (上级目录参照 hello_flutter);
-  Java JDK
-  Flutter SDK
-    在官网找安装包: https://flutter.cn/docs/get-started/install/macos (注意对应自己的系统, 然后添加环境变量);
-    命令帮助
-      flutter -h
-    检测开发环境
-      flutter doctor
-  Android Studio
-    安装 Android Studio
-    安装 Android SDK
-    安装 Android 模拟器
-  Xcode
-    安装 Xcode
-    配置 Xcode Command-line tools(命令行)
-      sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-      sudo xcodebuild -runFirstLaunch
-    配置 IOS 环境依赖(命令行)
-      brew update
-      brew install --HEAD libimobiledevice
-      brew install ideviceinstaller ios-depoly cocoapods
-      pod setup
 
-  以上步骤自行CSDN;
-  
-  创建flutter应用
-    flutter create hello_flutter(appName)
-  查看当前模拟器
-    flutter emulators
-  应用当前模拟器启动
-    flutter emulators --launch <emulator id>
-  开启模拟器
-    open -a Simulator
+  大致目录: 内置组件,  第三方组件, 状态管理,  路由与导航, 表单,  其他
 
-  运行方式
-    命令行启动项目
-      flutter run
-        r                       重新加载(命令行启动不能热更新);
-        R                       重新启动
-        p                       启动调试网格
-        o                       Android & IOS 系统切换
-        q                       退出模拟器
+  环境搭建:
+    Java JDK
+    Flutter SDK
+      在官网找安装包: https://flutter.cn/docs/get-started/install/macos (注意对应自己的系统, 然后添加环境变量);
+      命令帮助
+        flutter -h
+      检测开发环境
+        flutter doctor
+    Android Studio
+      安装 Android Studio
+      安装 Android SDK
+      安装 Android 模拟器
+    Xcode
+      安装 Xcode
+      配置 Xcode Command-line tools(命令行)
+        sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+        sudo xcodebuild -runFirstLaunch
+      配置 IOS 环境依赖(命令行)
+        brew update
+        brew install --HEAD libimobiledevice
+        brew install ideviceinstaller ios-depoly cocoapods
+        pod setup
 
-    VSCode 运行 选中(main.dart)
-      Run => Start Debugging
+    以上步骤自行CSDN;
+    
+    创建flutter应用
+      flutter create hello_flutter(appName)
+    查看当前模拟器
+      flutter emulators
+    应用当前模拟器启动
+      flutter emulators --launch <emulator id>
+    开启模拟器
+      open -a Simulator
 
-    XCode 运行
-    Runner.xcodeproj 是XCode执行目录,用Xcode选择打开即可;
-      ios => Runner.xcodeproj
-    .plist 是IOS权限配置文件(是否可以打开相机,相册等调用原生功能的权限):
-      ios => Runner => info.plist
+    运行方式
+      命令行启动项目
+        flutter run
+          r                       重新加载(命令行启动不能热更新);
+          R                       重新启动
+          p                       启动调试网格
+          o                       Android & IOS 系统切换
+          q                       退出模拟器
 
-    Android Studio 运行 (更改一下配置项后启动);
-      修改配置文件 改为国内镜像源
-        android => build.gradle:
-          buildscript{
-            repositories {
-                // google()
-                // mavenCentral()
-                maven {url 'https://maven.aliyun.com/repository/google'}
-                maven {url 'https://maven.aliyun.com/repository/jcenter'}
-                maven {url 'https://maven.aliyun.com/repository/public'}
+      VSCode 运行 选中(main.dart)
+        Run => Start Debugging
+
+      XCode 运行
+      Runner.xcodeproj 是XCode执行目录,用Xcode选择打开即可;
+        ios => Runner.xcodeproj
+      .plist 是IOS权限配置文件(是否可以打开相机,相册等调用原生功能的权限):
+        ios => Runner => info.plist
+
+      Android Studio 运行 (更改一下配置项后启动);
+        修改配置文件 改为国内镜像源
+          android => build.gradle:
+            buildscript{
+              repositories {
+                  // google()
+                  // mavenCentral()
+                  maven {url 'https://maven.aliyun.com/repository/google'}
+                  maven {url 'https://maven.aliyun.com/repository/jcenter'}
+                  maven {url 'https://maven.aliyun.com/repository/public'}
+              }
             }
-          }
-          allprojects {
-              repositories {
-                  // google()
-                  // mavenCentral()
-                  maven {url 'https://maven.aliyun.com/repository/google'}
-                  maven {url 'https://maven.aliyun.com/repository/jcenter'}
-                  maven {url 'https://maven.aliyun.com/repository/public'}
-              }
-          }
-      同理,本地的环境 Flutter SDK 安装包也需做更改
-        /Users/***/Library/Flutter/packages/flutter_tools/gradle/flutter.gradle
-          buildscript {
-              repositories {
-                  // google()
-                  // mavenCentral()
-                  maven {url 'https://maven.aliyun.com/repository/google'}
-                  maven {url 'https://maven.aliyun.com/repository/jcenter'}
-                  maven {url 'https://maven.aliyun.com/repository/public'}
-              }
-          }
+            allprojects {
+                repositories {
+                    // google()
+                    // mavenCentral()
+                    maven {url 'https://maven.aliyun.com/repository/google'}
+                    maven {url 'https://maven.aliyun.com/repository/jcenter'}
+                    maven {url 'https://maven.aliyun.com/repository/public'}
+                }
+            }
+        同理,本地的环境 Flutter SDK 安装包也需做更改
+          /Users/***/Library/Flutter/packages/flutter_tools/gradle/flutter.gradle
+            buildscript {
+                repositories {
+                    // google()
+                    // mavenCentral()
+                    maven {url 'https://maven.aliyun.com/repository/google'}
+                    maven {url 'https://maven.aliyun.com/repository/jcenter'}
+                    maven {url 'https://maven.aliyun.com/repository/public'}
+                }
+            }
 
 
   
@@ -154,11 +158,9 @@
 
 
 
-叁.HelloFlutter
-  
-  基础组件,  第三方组件, 状态管理,  路由与导航, 表单,  其他
 
-  基础组件:  
+
+叁.基础组件 (内置组件)
 
     常用, 布局, 按钮, 图片, 列表, 其他
     
@@ -222,7 +224,7 @@
 
       具体App结构请看图
       ```html
-        <img src="../Images/WechatIMG96.png">
+        <img src="/Images/course/WechatIMG96.png">
       ```
       
       
@@ -245,7 +247,7 @@
         https://fonts.google.com
         解压压缩包, 将字体文件复制到项目中
       在 pubspec.yaml中声明字体
-        <img src="/Images/WechatIMG97.png">
+        <img src="/Images/course/WechatIMG97.png">
       使用
         为整个应用设置默认自定义字体  (全局应用)
           MaterialApp(
@@ -374,7 +376,7 @@
         shape                       边框样式
         margin                      外边距
 
-      ListTitle
+      ListTile
         leading                     头部组件
         title                       标题
         subtitle                    子标题
@@ -442,26 +444,87 @@
         
 
 
-    16.ListView 
+    16.ListView (lib16/main.dart)
       ListView 在开发中经常使用的组件, 功能也比较丰富
         加载列表的组件(加载所有的Widgets, 适用Widget比较少的场景);
-        ListTitle
+        ListTile                      Tile而不是Title
           leading                       一般声明头部的图标或图片
           title                         标题
           subtitle                      子标题
           trailing                      声明尾部图标
           selected                      标记当前的选项是否选中
       ListView.builder
-        按需加载Widget, 性能比默认构造函数高, 适用于Widget较多的场景;
+        按需加载Widget, 性能比默认构造函数高, 适用于Widget较多的场景, 开发时使用很多
+        itemCount                       指定元素数量
+        itemExtent                      指定元素高度
+        itemBuilder                     指定元素构造函数
       ListView.separated
         比builder多了个分割器
 
 
 
-    17.
-    18.
-    19.
-    20.
-    21.
+    17.GridView (lib17/main.dart)
+      GridView
+        children
+        scrollDirection
+        gridDelegate                      网格代理 指定两种网格的显示方式
+          SliverGridDelegateWithFixedCrossAxisCount   ==>   GridView.count
+          SliverGridDelegateWithMaxCrossAxisExtent    ==>   GridView.extend
+      GridView.count                      指定固定列数
+      GridView.extend                     指定子组件宽度, 列数自适应
+      GridView.builder                    用法和 GridView + ListView 类似
+
+      图文示例:
+        <img src="/Images/course/WechatIMG102.png">
+
       
+    18.其他组件 (lib18/main.dart)
+      Material  安卓风格的组件库
+        之前章节都是安卓风格的组件
+      Cupertino IOS风格的组件库
+        import 'package:flutter/cupertino.dart';
+        和material一样默认继承在了 flutter sdk中, 不需要下载
+        
+        资源地址
+          https://docs.flutter.dev/development/ui/widgets/cupertino
       
+      Platform
+        import 'dart:io'
+        Platform 是 IO 库中的类, 有判读系统的属性
+
+        isIOS
+        isAndroid
+      
+      SafeArea
+        SafeArea 可以有效解决异形屏的问题 (比如刘海屏)
+
+        图文示例:
+          <img src="/Images/course/WechatIMG103.png">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+肆.第三方组件
+  
