@@ -442,9 +442,26 @@
         
 
 
-    
-    
-    
-    
-    
-    16.
+    16.ListView 
+      ListView 在开发中经常使用的组件, 功能也比较丰富
+        加载列表的组件(加载所有的Widgets, 适用Widget比较少的场景);
+        ListTitle
+          leading                       一般声明头部的图标或图片
+          title                         标题
+          subtitle                      子标题
+          trailing                      声明尾部图标
+          selected                      标记当前的选项是否选中
+      ListView.builder
+        按需加载Widget, 性能比默认构造函数高, 适用于Widget较多的场景;
+      ListView.separated
+        比builder多了个分割器
+
+
+
+    17.
+    18.
+    19.
+    20.
+    21.
+      
+      
