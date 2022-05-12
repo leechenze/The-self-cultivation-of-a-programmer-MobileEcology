@@ -528,3 +528,27 @@
 
 肆.第三方组件
   
+  第三方组件不同于内置组件引入可用, 第三方使用前需要下载
+  第三方组件有很多, 此处只记录三个常用的, 剩余的自行探索;
+    
+  dio                       功能类于  Axios
+  flutter_swiper            功能类于  Swiper
+  shared_preferences        功能类于  LocalStorage
+
+  1.dio
+    相当于 Flutter 版的Axios, 用于处理Http请求;
+    https://pub.dev/packages/dio
+    安装依赖:
+      pub get
+      flutter packages get
+      参考官网配置 VS Code 中设置配置并保存后,自动下载
+  
+  2.flutter_swiper
+    Flutter中最好的轮播组件, 适配Android 和 IOS
+      https://pub.dev/packages/flutter_swiper
+    
+
+
+
+  
+  
