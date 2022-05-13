@@ -535,7 +535,7 @@
   flutter_swiper            功能类于  Swiper
   shared_preferences        功能类于  LocalStorage
 
-  1.dio
+  1.dio (lib19/main.dart)
     相当于 Flutter 版的Axios, 用于处理Http请求;
     https://pub.dev/packages/dio
     安装依赖:
@@ -543,12 +543,86 @@
       flutter packages get
       参考官网配置 VS Code 中设置配置并保存后,自动下载
   
-  2.flutter_swiper
+  2.flutter_swiper  (lib20/main.dart)
     Flutter中最好的轮播组件, 适配Android 和 IOS
       https://pub.dev/packages/flutter_swiper
-    
+    安装依赖: 同上
+  
+  3.shared_preferences  (lib21/main.dart)
+    shared_preferences是一个本地数据缓存库  (类似于React Native中的 AsyncStorage)
+      https://pub.dev/packages/shared_preferences
+    安装依赖: 同上
+      shared_preferences既可以用在状态组件中, 也可以用在无状态组件中;
 
-
+    Error 更改配置:
+      com.android.tools.build:gradle:4.1.0
+      com.android.tools.build:gradle:3.5.1
+      
+    使用: SharedPreferences prefs = await SharedPreferences.getInstance();
+      增
+        setString(key, val)
+        setBool(key, val)
+        setInt(key, val)
+      删
+        remove(key)
+        clear()
+      改
+        setString(key, val)
+        setBool(key, val)
+        setInt(key, val)
+      查
+        getString(key, val)
+        getBool(key, val)
+        getInt(key, val)
 
   
-  
+伍.状态管理
+
+    StatefulWidget                        状态组件
+    DataTable                             拥有状态管理的表格
+    InheritedWidget                       实现跨组件的状态分享功能
+    生命周期
+    provider
+
+    1.StatefulWidget  (lib22/main.dart)
+      Flutter中的组件划分:
+        StatelessWidget                   无状态组件
+        StatefulWidget                    状态组件
+      状态作用域划分:
+        组件内私有状态  StatefulWidget
+        跨组件状态共享  InheritedWidget, Provider
+        全局状态       Redux, fish-redux, Mobox...
+      状态组件的组成
+        StatefulWidget  组件本身不可变 - @immutable
+        State           将变化的状态放到State中维护
+      
+    2.DataTable  (lib23/main.dart)
+      DataTable其实是一个UI组件, 是Flutter中的表格
+        column  声明表头列表
+          DataColumn  表格单元格
+        rows 声明表格数据
+          DataRow  表示一行数据
+            DataCell  数据单元格
+            
+      图文示例:
+        <img src="/Images/course/WechatIMG104.png">
+
+    3.InheritedWidget  (lib24/main.dart)
+      InheritedWidget是可以实现跨组件的状态分享功能
+      What: 
+        提供了沿树向下, 共享数据的功能
+        即子组件可以获取父组件(InheritedWidget)的数据
+      Why:  
+        依赖构造函数传递数据的方式不能满足真实的业务需求
+        所以, 需要一个新的, 更好的跨组件数据传输方案
+      How:
+        BuildContext.dependOnInheritedWidgetOfExactType<MyInheritedWidget>
+      
+        
+
+
+
+
+
+
+          

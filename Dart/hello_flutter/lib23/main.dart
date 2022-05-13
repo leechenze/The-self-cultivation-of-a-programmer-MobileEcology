@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'layout/InheritedWidgetDemo.dart';
+import 'layout/DataTableDemo.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
