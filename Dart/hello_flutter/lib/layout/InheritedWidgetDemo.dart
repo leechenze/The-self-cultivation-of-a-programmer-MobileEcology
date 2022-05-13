@@ -43,7 +43,7 @@ class _MyStateParentState extends State<MyStateParent> {
   @override
   Widget build(BuildContext context) {
     return ShareDataWidget(
-      num: _num,
+      num: this._num,
       child: Center(
         child: Column(
           children: [
@@ -76,8 +76,6 @@ class MyStateSon extends StatefulWidget {
 class _MyStateSonState extends State<MyStateSon> {
   @override
   Widget build(BuildContext context) {
-    print(ShareDataWidget.of(context)?.num);
-
     return Text(
       ShareDataWidget.of(context)?.num.toString() ?? '',
     );
@@ -86,10 +84,10 @@ class _MyStateSonState extends State<MyStateSon> {
 
 // 数据共享的组件
 class ShareDataWidget extends InheritedWidget {
-  final int num = 0;
+  int num = 0;
   final Widget child;
-  // @required 声明 num是必传项
-  ShareDataWidget({Key? key, required this.child, @required num})
+  // required 声明 num是必传项
+  ShareDataWidget({Key? key, required this.child, required this.num})
       : super(key: key, child: child);
 
   static ShareDataWidget? of(BuildContext context) {
