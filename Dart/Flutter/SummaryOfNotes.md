@@ -791,11 +791,53 @@
     
 
   7.BottomNavigationBar导航 (lib32/main.dart)
-    itmes         包含导航 (BottomNavigationItem) 的列表
-    currentIndex  当前导航索引
-    type          声明底部导航的样式,共两种  (BottomNavigationType)
-    onTap         单击事件 (一般会更新导航索引)
+    itmes                   包含导航 (BottomNavigationItem) 的列表
+    currentIndex            当前导航索引
+    type                    声明底部导航的样式,共两种  (BottomNavigationType)
+    onTap                   单击事件 (一般会更新导航索引)
   
   
   8.Tab导航 (lib33/main.dart)
+    DefaultTabController    整个Tab导航的容器;
+      length                  声明导航数量
+      child                   指定子组件
+    TabBar                  导航菜单
+      tabs                    导航菜单数组
+    TabBarView              导航页面
+      children                多个导航页面内容
     
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+柒.表单
