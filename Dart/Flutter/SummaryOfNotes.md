@@ -753,9 +753,15 @@
         Navigator.pop(context);
 
   3.命名路由  (lib28/main.dart)
+    声明路由
+      initialRoute  初始路由, 即默认页面
+      onUnknownRoute  未知路由, 也就是404
+      routes  路由表(Map类型)
+    跳转到命名路由
+      Navigator.pushNamed(context, '路由名称');
     
+  4.动态路由  (lib29/main.dart)
     
-
 
 
 
