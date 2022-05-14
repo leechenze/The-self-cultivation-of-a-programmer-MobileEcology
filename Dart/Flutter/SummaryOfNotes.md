@@ -1,5 +1,5 @@
 博学之, 审问之, 慎思之, 明辨之, 笃行之;
-壹、贰、叁、肆、伍、陆、柒、捌、玖、拾;
+壹.  贰.  叁.  肆.  伍.  陆.  柒.  捌.  玖.  拾;
 
 
 壹.概述
@@ -576,6 +576,38 @@
         getInt(key, val)
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
 伍.状态管理
 
     StatefulWidget                        状态组件
@@ -651,3 +683,76 @@
         获取数据模型并更新UI  (View层)
           通过上下文  (BuildContext)
           通过静态方法  (Provider.of<T>(context));
+          一旦有了数据更新, 通过 notifyListeners() 函数通知后面的子组件做更新
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+陆.路由与导航
+
+  1.路由简介
+  2.匿名路由
+  3.命名路由
+  4.动态路由
+  5.路由传参
+  6.Drawer导航  (抽屉菜单)
+  7.BottomNavigationBar导航 (底部菜单)
+  8.Tab导航 (选项卡)
+  
+
+
+  1.路由简介
+    Route
+      一个路由是一个屏幕或页面的抽象
+    Navigator
+      管理路由的组件
+        Navigator可以通过路由入栈和出栈来实现页面之间跳转
+      常用属性
+        initialRoute  初始路由, 即默认页面
+        onGenerateRoute 动态路由, 根据规则匹配动态路由
+        onUnknownRoute  未知路由, 也就是404
+        routes  路由集合
+  
+  2.匿名路由  (lib27/main.dart)
+    Navigator
+      push  (跳转到指定组件);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => 组件名称 () )
+        );
+      pop (回退);
+        Navigator.pop(context);
+
+
+
+
+
