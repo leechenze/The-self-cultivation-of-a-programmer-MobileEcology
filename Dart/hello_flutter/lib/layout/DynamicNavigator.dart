@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// 将Home 组件抽离出来;
+// Home;
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
   @override
@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("NamedNavigator"),
+        title: const Text("DynamicNavigator"),
         leading: const Icon(Icons.menu),
         actions: const [Icon(Icons.settings)],
         elevation: 0.0,
@@ -19,15 +19,21 @@ class Home extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'product');
+                Navigator.pushNamed(context, '/product');
               },
-              child: Text('跳转'),
+              child: Text('跳转至商品页'),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'user');
+                Navigator.pushNamed(context, '/product/1');
               },
-              child: Text('未知路由'),
+              child: Text('跳转至商品页1'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/product/2');
+              },
+              child: Text('跳转至商品页2'),
             ),
           ],
         ),
@@ -53,6 +59,39 @@ class ProductPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('返回'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// 产品页
+class ProductDetail extends StatelessWidget {
+  String id;
+
+  ProductDetail({Key? key, required this.id}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("商品详情页$id"),
+        leading: const Icon(Icons.menu),
+        actions: const [Icon(Icons.settings)],
+        elevation: 0.0,
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text('当前商品的ID是$id'),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);

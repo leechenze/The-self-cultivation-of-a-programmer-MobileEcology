@@ -761,6 +761,12 @@
       Navigator.pushNamed(context, '路由名称');
     
   4.动态路由  (lib29/main.dart)
+    命名路由可以看成是静态路由, 路由名称一旦声明之后就不再动了
+    动态路由是指 通过 onGenerateRoute 属性指定的路由
+    一旦通过 GenerateRoute 声明了动态路由之后, 之前的 routes 的路由列表就会失效;
+  
+  5.路由传参
+    
     
 
 
