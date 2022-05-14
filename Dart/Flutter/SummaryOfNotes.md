@@ -618,11 +618,36 @@
       How:
         BuildContext.dependOnInheritedWidgetOfExactType<MyInheritedWidget>
       
-        
+    4.生命周期  (lib25/main.dart)
+      initState 组件对象插入到元素树时调用
+      didChangeDependencies 当前状态对象的依赖改变时调用
+      build 组件渲染时调用
+      setState  组件对象的内部状态变更时调用
+      didUpdateWidget 组件配置更新时调用
+      deactivate  组件对象在元素树中暂时移除时调用
+      dispose 组件对象在元素树中永远移除时调用
+
+      图文示例:
+        <img src="/Images/course/WechatIMG106.png">
+      
 
 
-
-
-
-
-          
+    5.provider  (lib26/main.dart)
+      Provider  是对于InheritedWidget的封装, 跨组件数据分享的解决方案
+      Provider  是第三方库(需安装), InheritedWidget是内置的
+      资源网站:
+        https://pub.dev/packages/provider
+      优点:
+        简化资源的分配和处置
+        支持数据懒加载
+      Provider 实现原理?
+        <img src="/Images/course/WechatIMG107.png">
+      使用:
+        创建数据模型  (Model层)
+          T extends ChangeNotifier
+        创建Provider  (ViewModel层)
+          Provider()  不会被要求随着变化而变化
+          ChangeNotifierProvider()  随着某些数据改变而被通知更新
+        获取数据模型并更新UI  (View层)
+          通过上下文  (BuildContext)
+          通过静态方法  (Provider.of<T>(context));

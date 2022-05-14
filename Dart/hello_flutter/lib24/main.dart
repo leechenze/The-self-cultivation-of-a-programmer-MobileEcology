@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'layout/LifeCycle.dart';
+import 'layout/InheritedWidgetDemo.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
