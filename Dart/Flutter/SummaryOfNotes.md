@@ -779,6 +779,14 @@
       图文示例:
         <img src="/Images/course/WechatIMG109.png">
         
-
-
+  
+  6.Drawer导航  (lib31/main.dart)
+    Scaffold
+      drawer  (左侧抽屉菜单);
+      endDrawer (右侧抽屉菜单);
+    UserAccountsDrawerHeader
+      抽屉菜单头部组件
+    AboutListTile
+      关于弹窗
+    
 
