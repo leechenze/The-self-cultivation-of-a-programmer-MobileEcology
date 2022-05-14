@@ -790,3 +790,12 @@
       关于弹窗
     
 
+  7.BottomNavigationBar导航 (lib32/main.dart)
+    itmes         包含导航 (BottomNavigationItem) 的列表
+    currentIndex  当前导航索引
+    type          声明底部导航的样式,共两种  (BottomNavigationType)
+    onTap         单击事件 (一般会更新导航索引)
+  
+  
+  8.Tab导航 (lib33/main.dart)
+    
