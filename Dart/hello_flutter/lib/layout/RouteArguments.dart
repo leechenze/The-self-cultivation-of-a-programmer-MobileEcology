@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("DynamicNavigator"),
+        title: const Text("RouteArguments"),
         leading: const Icon(Icons.menu),
         actions: const [Icon(Icons.settings)],
         elevation: 0.0,
@@ -19,21 +19,24 @@ class Home extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/product');
+                Navigator.pushNamed(
+                  context,
+                  'product',
+                  // 传递参数
+                  arguments: {'title': 'Home传来的Title'},
+                );
               },
               child: Text('跳转至商品页'),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/product/1');
+                Navigator.pushNamed(
+                  context,
+                  'productDetail',
+                  arguments: {'id': 1},
+                );
               },
               child: Text('跳转至商品页1'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/product/2');
-              },
-              child: Text('跳转至商品页2'),
             ),
           ],
         ),
@@ -48,6 +51,8 @@ class ProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // 2.接收参数
+    final Map arguments = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -59,6 +64,7 @@ class ProductPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
+            Text('接收到的参数是: ${arguments['title']}'),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -72,18 +78,20 @@ class ProductPage extends StatelessWidget {
   }
 }
 
-// 产品页
+// 产品详情页
 class ProductDetail extends StatelessWidget {
-  String id;
-
-  ProductDetail({Key? key, required this.id}) : super(key: key);
+  ProductDetail({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Map arguments = ModalRoute.of(context)!.settings.arguments as Map;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("商品详情页$id"),
+        title: Text("商品详情页"),
         leading: const Icon(Icons.menu),
         actions: const [Icon(Icons.settings)],
         elevation: 0.0,
@@ -91,7 +99,7 @@ class ProductDetail extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text('当前商品的ID是$id'),
+            Text('当前商品的ID是 ${arguments['id']}'),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);

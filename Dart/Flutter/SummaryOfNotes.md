@@ -765,9 +765,20 @@
     动态路由是指 通过 onGenerateRoute 属性指定的路由
     一旦通过 GenerateRoute 声明了动态路由之后, 之前的 routes 的路由列表就会失效;
   
-  5.路由传参
-    
-    
+  5.路由传参  (lib30/main.dart)
+    匿名路由:
+      路由中声明参数
+      组件中接收参数
+      图文示例:
+        <img src="/Images/course/WechatIMG108.png">
+    命名路由:
+      路由中声明参数
+        Navigator.pushNamed(context,routename, {arguments});
+      组件中接收参数
+        ModalRoute.of(context).settings.arguments
+      图文示例:
+        <img src="/Images/course/WechatIMG109.png">
+        
 
 
 
