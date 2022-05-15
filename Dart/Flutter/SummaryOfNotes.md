@@ -46,7 +46,7 @@
     
 贰.环境搭建:  (上级目录参照 hello_flutter);
 
-  大致目录: 内置组件,  第三方组件, 状态管理,  路由与导航, 表单,  其他
+  大致目录: 内置组件,  第三方组件, 状态管理,  路由与导航, 表单,  动画
 
   环境搭建:
     Java JDK
@@ -840,4 +840,112 @@
 
 
 
-柒.表单
+柒.表单 (lib34/main.dart)
+  1.Switch
+  2.Checkbox
+  3.Radio
+  4.TextField
+  5.calendar
+  6.Form
+
+
+  1.Switch
+    value                       开关值
+    onChanged                   状态变更调用方法
+    activeColor                 开启时的按钮颜色
+    activeTrackColor            开启时的轨道颜色
+    inactiveThumbColor          关闭时的按钮颜色
+    inactiveTrackColor          关闭时的轨道颜色
+
+  2.Checkbox
+    Checkbox
+      value                       开关值
+      onChanged                   状态变更调用方法
+      activeColor                 选中时的背景颜色
+      checkColor                  选中时的对勾颜色
+    CheckboxListTile
+      title                       标题
+      subtitle                    子标题
+  
+  3.Radio
+    Radio
+      value                       开关值
+      groupValue                  选择组的值
+      onChanged                   状态变更调用方法
+    RadioListTile
+      title                       标题
+      subtitle                    子标题
+
+  4.TextField
+    autofocus                     是否获取焦点
+    keyboardType                  键盘类型(数字键盘 和 文本键盘)
+    obscureText                   true时为密码框, false为文本框
+    decoration                    样式修饰
+    onChanged                     内容更改时调用
+    labelText                     标题
+    hintText                      提示信息 placeholder
+    maxLines                      显示行数 但值大于1时,就会变成文本域
+    
+  5.Calendar  (更多代码片段请看: /Dart/Flutter 基础.pdf)
+    CalendarDatePicker            日历选择器
+      initialCanlendarMode        指定日历的展示方式
+        DatePickerMode.day        
+        DatePickerMode.year        
+    showDatePicker                日期选择器
+      initialDatePickerMode (year | day)
+      initialEntryMode  (calendar | input)  手动输入日期
+    showTimePicker                时间选择器
+
+  6.Form
+    使用步骤:
+      创建表单form, 并以GlobalKey 作为唯一性标识
+      添加带验证逻辑的 TextFormField 到 Form 中
+      创建按钮以验证和提交表单
+    Form                          表单容器
+      key                         GlobalKey
+      child                       子组件
+
+      创建表单唯一键:final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+      验证表单:     _formKey.currentState!.validate() 
+      提交表单:     _formKey.currentState!.save() 
+      重置表单:     _formKey.currentState!.reset() 
+      
+    TextFormField                 输入框
+      和TextField的区别: 必须在Form内使用 并且带有验证器
+      validator                   验证器
+      obscureText                 密码框
+      onSaved
+        作用: 设定表单字段的值
+        触发时机: 在表单save()之后触发, 也就是说调用表单的save(),就会触发这里的onSave()
+        
+        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+捌.动画
+  

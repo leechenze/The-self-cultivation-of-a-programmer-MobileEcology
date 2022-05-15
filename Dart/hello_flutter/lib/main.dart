@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'layout/TabDemo.dart';
+// import 'layout/SwitchDemo.dart';
+// import 'layout/CheckboxDemo.dart';
+// import 'layout/RadioDemo.dart';
+// import 'layout/TextFieldDemo.dart';
+// import 'layout/CalendarDemo.dart';
+import 'layout/FormDemo.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
