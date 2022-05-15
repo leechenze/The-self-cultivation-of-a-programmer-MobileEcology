@@ -46,7 +46,7 @@
     
 贰.环境搭建:  (上级目录参照 hello_flutter);
 
-  大致目录: 内置组件,  第三方组件, 状态管理,  路由与导航, 表单,  动画
+  大致目录: 内置组件,  第三方组件, 状态管理,  路由与导航, 表单,  动画, 多语言, 多主题
 
   环境搭建:
     Java JDK
@@ -948,4 +948,103 @@
   
   
 捌.动画
+  动画分类:
+    补间动画(Tween) 顾名思义就是填补空间的;
+    拟物动画 对于真实世界的行为进行建模, 例如: 弹簧, 重力, 阻尼, 抛物线等等...
+
+  1.基础动画
+  2.交织动画
+  3.Hero动画
+
+
+  基础动画:  (lib35/main.dart)
+    Animation:                              抽象类
+      animation是 Flutter动画库中的核心类;
+      他包含动画的值和状态的两个属性, 定义了动画的一系列监听函数;
+      监听值:
+        animation.addListener
+        animation.removeListener
+      监听状态:
+        animation.addStatusListener
+        animation.removeStatusListener
+        动画状态:
+          AnimationStatus.dismissed         动画初始状态
+          AnimationStatus.completed         动画结束状态
+          AnimationStatus.forward           动画处在从开始到结束的运行状态
+          AnimationStatus.reverse           动画处在从结束到开始的运行状态
+    
+    AnimationController                     动画控制器(负责动画具体执行的类)
+      duration                              动画执行时间
+      reverseDuration                       动画方向执行时间
+      lowerBround = 0.0                     动画最小值
+      upperBround = 0.0                     动画最大值
+      value                                 动画默认初始值,默认为lowerBound
+      vsync                                 TickerProvider类型的对象, 用来创建Ticker对象
+        当创建一个AnimationController时, 必须传递一个 vsync 参数
+        用来防止屏幕外动画 (动画页面切换到后台时) 消耗不必要的资源
+      
+      controller.forward()                            正向执行动画
+      controller.reverse()                            反向执行动画
+      controller.dispose()                            释放动画资源,避免资源泄漏
+      controller.stop()                               停止动画运行
+
+    Tween
+    ColorTween
+      Tween的唯一作用职责就是定义从输入范围到输出范围的映射;
+    
+    CurvedAnimation                         控制动画曲线
+      动画曲线演示: https://api.flutter-io.cn/flutter/animation/Curves-class.html
+    
+  交织动画: (lib36/main.dart)
+    交织动画是由多个单一动画叠加而成的复杂动画
+    例如: 组件变化可能涉及到宽高, 颜色, 透明, 未知等等...
+    需要设置动画的时间间隔 Interval
+    
+    Transform                             对组件进行矩阵变换
+      .translate()                        平移
+      .rotate()                           旋转
+      .scale()                            缩放
+
+    图文示例:
+      <img src="/Images/course/WechatIMG102.png">
+    
+  Hero动画: (lib37/main.dart)
+    Hero动画主要作用就是实现跨页面的动画效果;
+    在不同的页面中,声明一个共享组件(Hero)
+    由于共享组件在页面中的位置,外观等不同, 路由切换时,形成动画效果;
   
+  Hero
+    tag                       路由切换时,共享组件的标记
+    child                     声明子组件
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+玖.多语言
+
+
+
+
+
+
+
+
+拾.多主题

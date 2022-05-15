@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'layout/StaggerAnimationDemo.dart';
+import 'layout/AnimationDemo.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
