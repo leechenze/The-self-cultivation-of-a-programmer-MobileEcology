@@ -1038,7 +1038,78 @@
 
 
 
+
+    
+
+
+
+
+
+
+
+
 玖.多语言
+  国际化 internationalization 简称(i18n);
+    终端(手机)系统语言切换时, Flutter应用的跟随切换
+  
+  内容:
+    组件国际化
+      例如: 日历, 弹窗等常用组件的国际化;
+    文本国际化
+      自定义文本的国际化, 例如自己写的标题, 菜单名称等等...
+  
+  使用:
+    pubspec.yaml中配置 flutter_localizations
+      pub get进行安装
+    
+    组件国际化  (lib38/WidgetI18nDemo.dart)
+      设置 MaterialApp 组件
+        localizationsDelegates              指定那些组件需要国际化
+          图文示例:
+            <img src="/Images/course/WechatIMG114.png">
+        supportedLocales                    指定要支持那些语言
+          图文示例:
+            <img src="/Images/course/WechatIMG115.png">
+      查看组件效果:
+        在模拟器上, 将语言设置为中文
+
+    文本国际化  (lib38/TextI18nDemo.dart)
+      创建本地化类
+        CustomLocalizations
+      创建本地化代理
+        CustomLocalizationsDelegate extends LocalizationsDelegate<CustomLocalizations>
+        
+        isSupported                     检测当前的国际化, 是否在有效的语言范围内
+        shouldReload                    本地化重新构建时, 是否调用load方法, 加载本地化资源
+        load                            语言发生变化时, 加载对应的本地化资源
+      
+      使用本地化类  (更多代码片段请看: /Dart/Flutter 基础.pdf )
+        CustomLocalizations.delegate
+
+    加载语言包
+      
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
