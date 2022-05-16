@@ -1133,4 +1133,28 @@
 
 
 拾.多主题
+  多主题(UI风格, 样式, 皮肤);
+    主题风格可通过theme定义, 从而实现整个App风格的统一;
+    一旦设置了主题, 那么应用程序中的某些Widget, 就会直接使用主题的样式;
+    优先级: 自身样式 > 局部样式 > 全局样式
+    
+  相关组件  (lib39/BasicsThemeDemo.dart)
+    ThemeData                               声明全局主题
+      brightness  (light | dark)
+      primaryColor | accentColor
+      buttonTheme | cardTheme | iconTheme | textTheme
+    Theme                                   声明局部主题
+      Theme.of(context)                     获取上下文中的主题信息
   
+  适配终端
+    声明不同主题
+      CustomTheme
+      
+    使用主题
+      theme: CustomTheme.lightTheme
+      darkTheme: CustomTheme.darkTheme
+      Flutter内置主题
+        theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
+
+    在模拟器中切换主题, Flutter应用中查看效果
