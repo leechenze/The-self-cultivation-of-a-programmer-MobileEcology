@@ -1087,6 +1087,20 @@
         CustomLocalizations.delegate
 
     加载语言包
+      创建语言包
+        I18nLang
+          zh.json
+          en.json
+      检测当前语言
+        localeResolutionCallback
+          locale.languageCode             语言代码,如: en, zh
+          locale.countryCode              国家代码,如: US, CN
+      设置语言包
+        创建语言文件
+        在 pubspec.yaml 中配置语言资源
+      异步加载语言包
+        在CustomLocalizations中, 添加 loadJSON() 方法
+        在CustomLocalizationsDelegate中, 调用 在CustomLocalizations 的 loadJSON() 方法;
       
   
     
@@ -1119,3 +1133,4 @@
 
 
 拾.多主题
+  
