@@ -11,6 +11,9 @@
 
 
 
+
+
+
 零.概述
 
   语法基础, 数据类型, 运算符, 函数, 类与对象, 库与生态
@@ -33,6 +36,11 @@
         pub.bat                                               Dart生态的第三方包工具
       /Users/lee/Library/Flutter/.pub-cache/bin
         Pub下载的公共模块的执行路径;
+    
+    adb 要常清理apk缓存否则报错;
+      adb root
+      adb shell ls -l /data/app/
+      adb shell rm -rf /data/app/~~tniAZGVGJ4Lw7YiZHFvT4g==
     
   资源网站:
     官网
