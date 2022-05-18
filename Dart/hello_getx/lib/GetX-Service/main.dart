@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hello_getx/GetX-GetConnetAndStateMixin/MovieModule/View/MovieListView.dart';
-import 'package:hello_getx/GetX-GetConnetAndStateMixin/RoutesModule/AppPages.dart';
 import 'package:hello_getx/GetX-Service/Service.dart';
-import 'package:hello_getx/GetX-Binding/Binding/AllControllerBinding.dart';
-import 'package:hello_getx/GetX-Binding/Binding/MyBinding.dart';
-import 'package:hello_getx/GetX-Binding/Binding/HomeBinding.dart';
 
 // import 'GetX-Snackbar/SnackbarExample.dart';
 // import 'GetX-Dialog/DialogExample.dart';
@@ -17,16 +12,18 @@ import 'package:hello_getx/GetX-Binding/Binding/HomeBinding.dart';
 // import 'GetX-Controller-LifeCycle/Controller-LifeCycle.dart';
 // import 'GetX-Controller-UniqueID/Controller-UniqueID.dart';
 // import 'package:hello_getx/GetX-I18n/I18nExample.dart'; // 请看GetX-I18n/main.dart
-// import 'package:hello_getx/GetX-Service/ServiceExample.dart';
-// import 'package:hello_getx/GetX-Binding/HomePage.dart';
-// import 'package:hello_getx/GetX-Binding/MyPage.dart';
-// import 'package:hello_getx/GetX-GetUtils/GetUtilsExample.dart';
-// import 'package:hello_getx/GetX-GetView/GetViewExample.dart';
-// import 'package:hello_getx/GetX-GetWidget/GetWidgetExample.dart';
-import 'package:hello_getx/GetX-GetConnetAndStateMixin/GetConnetAndStateExample.dart';
+import 'package:hello_getx/GetX-Service/ServiceExample.dart';
 
 Future<void> main() async {
+  // 初始化服务
+  await initService();
   runApp(const MyApp());
+}
+
+Future<void> initService() async {
+  print('初始化服务');
+  await Get.putAsync(() async => await Service());
+  print('所有服务启动');
 }
 
 class MyApp extends StatelessWidget {
@@ -39,9 +36,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: Home(),
-      initialRoute: AppPages.INIT,
-      getPages: AppPages.routes,
+      home: Home(),
       showSemanticsDebugger: false,
     );
   }
