@@ -130,6 +130,7 @@
 拾伍.GetX-GetCli
   文档参考地址:
     https://liujunmin.com/flutter/getx/getx_cli.html#getx-cli%E5%AE%89%E8%A3%85
+    https://blog.csdn.net/u010755471/article/details/121488438?ops_request_misc=&request_id=&biz_id=102&utm_term=macos%20get-cli&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-121488438.142^v10^pc_search_result_control_group,157^v4^control&spm=1018.2226.3001.4187
   进一步了解详细内容请看 
     hello-getxcli
 
