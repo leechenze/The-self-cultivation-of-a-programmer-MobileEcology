@@ -37,7 +37,7 @@
       /Users/lee/Library/Flutter/.pub-cache/bin
         Pub下载的公共模块的执行路径;
     
-    adb 要常清理apk缓存否则报错;
+    adb 要常清理apk缓存否则报错: [INSTALL_FAILED_INSUFFICIENT_STORAGE]
       adb root
       adb shell ls -l /data/app/
       adb shell rm -rf /data/app/~~tniAZGVGJ4Lw7YiZHFvT4g==

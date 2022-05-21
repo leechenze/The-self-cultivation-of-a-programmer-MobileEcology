@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+    
 
     {
       "name": "hello_flutter",
@@ -28,6 +29,12 @@
     {
       "name": "hello_getx",
       "cwd": "hello_getx",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "getx_cli",
+      "cwd": "getx_cli",
       "request": "launch",
       "type": "dart"
     },
