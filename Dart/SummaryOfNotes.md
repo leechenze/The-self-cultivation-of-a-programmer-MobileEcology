@@ -41,6 +41,9 @@
       adb root
       adb shell ls -l /data/app/
       adb shell rm -rf /data/app/~~tniAZGVGJ4Lw7YiZHFvT4g==
+      And
+      adb shell ls -l /data/local/tmp
+      adb shell rm -rf sky.com.example.test.sha1
     
   资源网站:
     官网
